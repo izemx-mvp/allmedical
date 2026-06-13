@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import {
-  LayoutDashboard, Bot, Megaphone, Target, FileSearch, MessagesSquare,
-  CheckSquare, FolderOpen, BookOpen, Workflow, BarChart3, Bell,
+  LayoutDashboard, Bot, Megaphone, Target, FileSearch,
+  BookOpen, BarChart3, Bell,
   ShieldCheck, Settings, Stethoscope,
 } from "lucide-react";
 import {
@@ -22,11 +22,7 @@ const agents = [
 ];
 
 const workspace = [
-  { title: "Conversations IA", url: "/conversations", icon: MessagesSquare },
-  { title: "Tâches", url: "/taches", icon: CheckSquare },
-  { title: "Documents", url: "/documents", icon: FolderOpen },
   { title: "Base de connaissances", url: "/base-connaissances", icon: BookOpen },
-  { title: "Automatisations", url: "/automatisations", icon: Workflow },
   { title: "Rapports", url: "/rapports", icon: BarChart3 },
   { title: "Notifications", url: "/notifications", icon: Bell },
 ];
