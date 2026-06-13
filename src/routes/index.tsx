@@ -30,7 +30,7 @@ const kpis = [
   { label: "Campagnes pub actives", value: "12", delta: "ROAS moyen 3.4×", icon: Target, tone: "turquoise" },
   { label: "Appels d'offres analysés", value: "34", delta: "8 pertinents", icon: FileSearch, tone: "primary" },
   { label: "Notifications en attente", value: "5", delta: "2 urgentes", icon: Bell, tone: "warning" },
-  { label: "Coût IA estimé / mois", value: "€ 412", delta: "Budget 70%", icon: Euro, tone: "primary" },
+  { label: "Coût IA estimé / mois", value: "4 120 MAD", delta: "Budget 70%", icon: Euro, tone: "primary" },
   { label: "Temps gagné estimé", value: "184 h", delta: "≈ 23 jours/homme", icon: Clock, tone: "turquoise" },
 ];
 
@@ -157,7 +157,7 @@ function Dashboard() {
           </ResponsiveContainer>
           <div className="mt-3 grid grid-cols-3 gap-2 text-center">
             <div><div className="text-lg font-bold">3.4×</div><div className="text-[11px] text-muted-foreground">ROAS</div></div>
-            <div><div className="text-lg font-bold">€ 28k</div><div className="text-[11px] text-muted-foreground">Dépensé</div></div>
+            <div><div className="text-lg font-bold">280k MAD</div><div className="text-[11px] text-muted-foreground">Dépensé</div></div>
             <div><div className="text-lg font-bold">412</div><div className="text-[11px] text-muted-foreground">Leads</div></div>
           </div>
         </Card>
@@ -188,7 +188,7 @@ function Dashboard() {
 
       <div className="mt-6 grid gap-4 sm:grid-cols-3">
         {[
-          { l: "Quota IA mensuel", v: 70, sub: "€ 412 / € 590" },
+          { l: "Quota IA mensuel", v: 70, sub: "4 120 / 5 900 MAD" },
           { l: "Validations en attente", v: 45, sub: "9 publications" },
           { l: "Conformité RGPD", v: 100, sub: "Audit du 12 nov." },
         ].map((s) => (
