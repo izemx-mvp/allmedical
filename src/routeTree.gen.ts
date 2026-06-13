@@ -9,8 +9,92 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TrafficManagerRouteImport } from './routes/traffic-manager'
+import { Route as TachesRouteImport } from './routes/taches'
+import { Route as RapportsRouteImport } from './routes/rapports'
+import { Route as ParametresRouteImport } from './routes/parametres'
+import { Route as NotificationsRouteImport } from './routes/notifications'
+import { Route as MarchesPublicsRouteImport } from './routes/marches-publics'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as DocumentsRouteImport } from './routes/documents'
+import { Route as ConversationsRouteImport } from './routes/conversations'
+import { Route as CommunityManagerRouteImport } from './routes/community-manager'
+import { Route as BaseConnaissancesRouteImport } from './routes/base-connaissances'
+import { Route as AutomatisationsRouteImport } from './routes/automatisations'
+import { Route as AgentsRouteImport } from './routes/agents'
+import { Route as AdministrationRouteImport } from './routes/administration'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TrafficManagerRoute = TrafficManagerRouteImport.update({
+  id: '/traffic-manager',
+  path: '/traffic-manager',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TachesRoute = TachesRouteImport.update({
+  id: '/taches',
+  path: '/taches',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RapportsRoute = RapportsRouteImport.update({
+  id: '/rapports',
+  path: '/rapports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParametresRoute = ParametresRouteImport.update({
+  id: '/parametres',
+  path: '/parametres',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarchesPublicsRoute = MarchesPublicsRouteImport.update({
+  id: '/marches-publics',
+  path: '/marches-publics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocumentsRoute = DocumentsRouteImport.update({
+  id: '/documents',
+  path: '/documents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConversationsRoute = ConversationsRouteImport.update({
+  id: '/conversations',
+  path: '/conversations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommunityManagerRoute = CommunityManagerRouteImport.update({
+  id: '/community-manager',
+  path: '/community-manager',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BaseConnaissancesRoute = BaseConnaissancesRouteImport.update({
+  id: '/base-connaissances',
+  path: '/base-connaissances',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AutomatisationsRoute = AutomatisationsRouteImport.update({
+  id: '/automatisations',
+  path: '/automatisations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AgentsRoute = AgentsRouteImport.update({
+  id: '/agents',
+  path: '/agents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdministrationRoute = AdministrationRouteImport.update({
+  id: '/administration',
+  path: '/administration',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +103,228 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/administration': typeof AdministrationRoute
+  '/agents': typeof AgentsRoute
+  '/automatisations': typeof AutomatisationsRoute
+  '/base-connaissances': typeof BaseConnaissancesRoute
+  '/community-manager': typeof CommunityManagerRoute
+  '/conversations': typeof ConversationsRoute
+  '/documents': typeof DocumentsRoute
+  '/login': typeof LoginRoute
+  '/marches-publics': typeof MarchesPublicsRoute
+  '/notifications': typeof NotificationsRoute
+  '/parametres': typeof ParametresRoute
+  '/rapports': typeof RapportsRoute
+  '/taches': typeof TachesRoute
+  '/traffic-manager': typeof TrafficManagerRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/administration': typeof AdministrationRoute
+  '/agents': typeof AgentsRoute
+  '/automatisations': typeof AutomatisationsRoute
+  '/base-connaissances': typeof BaseConnaissancesRoute
+  '/community-manager': typeof CommunityManagerRoute
+  '/conversations': typeof ConversationsRoute
+  '/documents': typeof DocumentsRoute
+  '/login': typeof LoginRoute
+  '/marches-publics': typeof MarchesPublicsRoute
+  '/notifications': typeof NotificationsRoute
+  '/parametres': typeof ParametresRoute
+  '/rapports': typeof RapportsRoute
+  '/taches': typeof TachesRoute
+  '/traffic-manager': typeof TrafficManagerRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/administration': typeof AdministrationRoute
+  '/agents': typeof AgentsRoute
+  '/automatisations': typeof AutomatisationsRoute
+  '/base-connaissances': typeof BaseConnaissancesRoute
+  '/community-manager': typeof CommunityManagerRoute
+  '/conversations': typeof ConversationsRoute
+  '/documents': typeof DocumentsRoute
+  '/login': typeof LoginRoute
+  '/marches-publics': typeof MarchesPublicsRoute
+  '/notifications': typeof NotificationsRoute
+  '/parametres': typeof ParametresRoute
+  '/rapports': typeof RapportsRoute
+  '/taches': typeof TachesRoute
+  '/traffic-manager': typeof TrafficManagerRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/administration'
+    | '/agents'
+    | '/automatisations'
+    | '/base-connaissances'
+    | '/community-manager'
+    | '/conversations'
+    | '/documents'
+    | '/login'
+    | '/marches-publics'
+    | '/notifications'
+    | '/parametres'
+    | '/rapports'
+    | '/taches'
+    | '/traffic-manager'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/administration'
+    | '/agents'
+    | '/automatisations'
+    | '/base-connaissances'
+    | '/community-manager'
+    | '/conversations'
+    | '/documents'
+    | '/login'
+    | '/marches-publics'
+    | '/notifications'
+    | '/parametres'
+    | '/rapports'
+    | '/taches'
+    | '/traffic-manager'
+  id:
+    | '__root__'
+    | '/'
+    | '/administration'
+    | '/agents'
+    | '/automatisations'
+    | '/base-connaissances'
+    | '/community-manager'
+    | '/conversations'
+    | '/documents'
+    | '/login'
+    | '/marches-publics'
+    | '/notifications'
+    | '/parametres'
+    | '/rapports'
+    | '/taches'
+    | '/traffic-manager'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdministrationRoute: typeof AdministrationRoute
+  AgentsRoute: typeof AgentsRoute
+  AutomatisationsRoute: typeof AutomatisationsRoute
+  BaseConnaissancesRoute: typeof BaseConnaissancesRoute
+  CommunityManagerRoute: typeof CommunityManagerRoute
+  ConversationsRoute: typeof ConversationsRoute
+  DocumentsRoute: typeof DocumentsRoute
+  LoginRoute: typeof LoginRoute
+  MarchesPublicsRoute: typeof MarchesPublicsRoute
+  NotificationsRoute: typeof NotificationsRoute
+  ParametresRoute: typeof ParametresRoute
+  RapportsRoute: typeof RapportsRoute
+  TachesRoute: typeof TachesRoute
+  TrafficManagerRoute: typeof TrafficManagerRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/traffic-manager': {
+      id: '/traffic-manager'
+      path: '/traffic-manager'
+      fullPath: '/traffic-manager'
+      preLoaderRoute: typeof TrafficManagerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/taches': {
+      id: '/taches'
+      path: '/taches'
+      fullPath: '/taches'
+      preLoaderRoute: typeof TachesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rapports': {
+      id: '/rapports'
+      path: '/rapports'
+      fullPath: '/rapports'
+      preLoaderRoute: typeof RapportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parametres': {
+      id: '/parametres'
+      path: '/parametres'
+      fullPath: '/parametres'
+      preLoaderRoute: typeof ParametresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/marches-publics': {
+      id: '/marches-publics'
+      path: '/marches-publics'
+      fullPath: '/marches-publics'
+      preLoaderRoute: typeof MarchesPublicsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/documents': {
+      id: '/documents'
+      path: '/documents'
+      fullPath: '/documents'
+      preLoaderRoute: typeof DocumentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conversations': {
+      id: '/conversations'
+      path: '/conversations'
+      fullPath: '/conversations'
+      preLoaderRoute: typeof ConversationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/community-manager': {
+      id: '/community-manager'
+      path: '/community-manager'
+      fullPath: '/community-manager'
+      preLoaderRoute: typeof CommunityManagerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/base-connaissances': {
+      id: '/base-connaissances'
+      path: '/base-connaissances'
+      fullPath: '/base-connaissances'
+      preLoaderRoute: typeof BaseConnaissancesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/automatisations': {
+      id: '/automatisations'
+      path: '/automatisations'
+      fullPath: '/automatisations'
+      preLoaderRoute: typeof AutomatisationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/agents': {
+      id: '/agents'
+      path: '/agents'
+      fullPath: '/agents'
+      preLoaderRoute: typeof AgentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/administration': {
+      id: '/administration'
+      path: '/administration'
+      fullPath: '/administration'
+      preLoaderRoute: typeof AdministrationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +337,21 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdministrationRoute: AdministrationRoute,
+  AgentsRoute: AgentsRoute,
+  AutomatisationsRoute: AutomatisationsRoute,
+  BaseConnaissancesRoute: BaseConnaissancesRoute,
+  CommunityManagerRoute: CommunityManagerRoute,
+  ConversationsRoute: ConversationsRoute,
+  DocumentsRoute: DocumentsRoute,
+  LoginRoute: LoginRoute,
+  MarchesPublicsRoute: MarchesPublicsRoute,
+  NotificationsRoute: NotificationsRoute,
+  ParametresRoute: ParametresRoute,
+  RapportsRoute: RapportsRoute,
+  TachesRoute: TachesRoute,
+  TrafficManagerRoute: TrafficManagerRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
