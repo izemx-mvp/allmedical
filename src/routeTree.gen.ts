@@ -9,12 +9,36 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TrafficManagerRouteImport } from './routes/traffic-manager'
+import { Route as MarchesPublicsRouteImport } from './routes/marches-publics'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as CommunityManagerRouteImport } from './routes/community-manager'
+import { Route as AgentsRouteImport } from './routes/agents'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TrafficManagerRoute = TrafficManagerRouteImport.update({
+  id: '/traffic-manager',
+  path: '/traffic-manager',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarchesPublicsRoute = MarchesPublicsRouteImport.update({
+  id: '/marches-publics',
+  path: '/marches-publics',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommunityManagerRoute = CommunityManagerRouteImport.update({
+  id: '/community-manager',
+  path: '/community-manager',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AgentsRoute = AgentsRouteImport.update({
+  id: '/agents',
+  path: '/agents',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,37 +49,100 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/agents': typeof AgentsRoute
+  '/community-manager': typeof CommunityManagerRoute
   '/login': typeof LoginRoute
+  '/marches-publics': typeof MarchesPublicsRoute
+  '/traffic-manager': typeof TrafficManagerRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/agents': typeof AgentsRoute
+  '/community-manager': typeof CommunityManagerRoute
   '/login': typeof LoginRoute
+  '/marches-publics': typeof MarchesPublicsRoute
+  '/traffic-manager': typeof TrafficManagerRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/agents': typeof AgentsRoute
+  '/community-manager': typeof CommunityManagerRoute
   '/login': typeof LoginRoute
+  '/marches-publics': typeof MarchesPublicsRoute
+  '/traffic-manager': typeof TrafficManagerRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/login'
+  fullPaths:
+    | '/'
+    | '/agents'
+    | '/community-manager'
+    | '/login'
+    | '/marches-publics'
+    | '/traffic-manager'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/login'
-  id: '__root__' | '/' | '/login'
+  to:
+    | '/'
+    | '/agents'
+    | '/community-manager'
+    | '/login'
+    | '/marches-publics'
+    | '/traffic-manager'
+  id:
+    | '__root__'
+    | '/'
+    | '/agents'
+    | '/community-manager'
+    | '/login'
+    | '/marches-publics'
+    | '/traffic-manager'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AgentsRoute: typeof AgentsRoute
+  CommunityManagerRoute: typeof CommunityManagerRoute
   LoginRoute: typeof LoginRoute
+  MarchesPublicsRoute: typeof MarchesPublicsRoute
+  TrafficManagerRoute: typeof TrafficManagerRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/traffic-manager': {
+      id: '/traffic-manager'
+      path: '/traffic-manager'
+      fullPath: '/traffic-manager'
+      preLoaderRoute: typeof TrafficManagerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/marches-publics': {
+      id: '/marches-publics'
+      path: '/marches-publics'
+      fullPath: '/marches-publics'
+      preLoaderRoute: typeof MarchesPublicsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/login': {
       id: '/login'
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/community-manager': {
+      id: '/community-manager'
+      path: '/community-manager'
+      fullPath: '/community-manager'
+      preLoaderRoute: typeof CommunityManagerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/agents': {
+      id: '/agents'
+      path: '/agents'
+      fullPath: '/agents'
+      preLoaderRoute: typeof AgentsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,7 +157,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AgentsRoute: AgentsRoute,
+  CommunityManagerRoute: CommunityManagerRoute,
   LoginRoute: LoginRoute,
+  MarchesPublicsRoute: MarchesPublicsRoute,
+  TrafficManagerRoute: TrafficManagerRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
